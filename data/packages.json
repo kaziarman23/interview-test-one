@@ -1,0 +1,11 @@
+[
+  {
+    "packageId": "PKG001",
+    "name": "Beach Resort Package",
+    "location": "Cox's Bazar",
+    "duration": "3 days",
+    "pricePerPerson": 5000,
+    "capacity": 10,
+    "bookings": []
+  }
+]
