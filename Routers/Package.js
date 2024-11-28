@@ -7,7 +7,6 @@ const {
 } = require("../validation/validation.js");
 const packages = require("../data/packages.json");
 
-
 const router = express.Router();
 
 router.post("/check-availability", (req, res) => {
@@ -18,6 +17,13 @@ router.post("/check-availability", (req, res) => {
     customerDetails,
     specialRequirements,
   } = req.body;
+
+  const validateError = validateRequest(req.body);
+  if (validateError) {
+    return res.status(400).send({
+      error: validateError,
+    });
+  }
 
   const tourPackage = packages.find(
     (package) => package.packageId === packageId
