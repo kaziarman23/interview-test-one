@@ -32,7 +32,7 @@ router.post("/check-availability", (req, res) => {
   if (!availableResult.isAvailable) {
     return res.status(400).send({
       message: "not available",
-      error: result.error,
+      error: availableResult.error,
     });
   }
 
