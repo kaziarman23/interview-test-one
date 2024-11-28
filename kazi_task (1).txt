@@ -1,0 +1,43 @@
+Task: Tourism Package Availability API
+
+Create an Express.js API endpoint that manages tourism package availability and provisional bookings. This task aligns with his university project experience while testing fundamental API development skills.
+Required Endpoint: POST /api/packages/check-availability
+The endpoint should validate package availability and create provisional bookings. Request structure:
+json{
+  "packageId": "string",
+  "startDate": "2024-12-01",
+  "numberOfTravelers": 3,
+  "customerDetails": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "contactNumber": "+880123456789"
+  },
+  "specialRequirements": "Vegetarian meals"
+}
+
+Business Requirements:
+
+Verify package availability for the requested dates
+Check if the requested number of travelers can be accommodated
+Create a 30-minute provisional booking if available
+Implement proper date validation and booking conflicts check
+Return appropriate status codes and detailed error messages
+
+Success Response Structure:
+json{
+  "bookingReference": "TR-2024-001",
+  "packageDetails": {
+    "name": "Beach Resort Package",
+    "location": "Cox's Bazar",
+    "duration": "3 days"
+  },
+  "provisionalBooking": {
+    "expiresAt": "2024-11-27T10:30:00Z",
+    "totalPrice": 15000,
+    "status": "provisional"
+  }
+}
+
+
+
+
