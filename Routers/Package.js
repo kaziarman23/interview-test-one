@@ -42,7 +42,7 @@ router.post("/check-availability", (req, res) => {
     .toUpperCase()}`;
 
   // mongoDb methods
-  tourPackage.booking.push({
+  tourPackage.bookings.push({
     bookingReference,
     startDate,
     numberOfTravelers,
