@@ -43,7 +43,8 @@ router.post("/check-availability", (req, res) => {
       error: availableResult.error,
     });
   }
-
+  
+  
   const expireDate = moment().add(30, "minutes").toISOString();
   const bookingReference = `TR-${moment().format("YYYY")}-${uuidv4()
     .slice(0, 6)
@@ -70,7 +71,7 @@ router.post("/check-availability", (req, res) => {
     },
     provisionalBooking: {
       expireDate,
-      totalPrice: price,
+      totalPrice: availableResult.price,
       status: "provisional",
     },
   });
